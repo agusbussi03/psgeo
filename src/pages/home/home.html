@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Georeferencia</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+   <ion-card-content>
+     <h2>Geolocalizacion de elementos electorales</h2>
+
+     <button ion-button (click)="takePicture()">Sacar foto</button>
+
+     <p *ngIf="base64Image" >Foto a enviar:</p>
+     <img [src]="base64Image" *ngIf="base64Image" />
+<p  >Coordenadas:</p>
+     <p><input type=text readonly name=latitud id=latitud /></p>
+     <p><input type=text readonly name=longitud id=longitud /></p>
+   </ion-card-content>
+
+ <ion-label>Candidato</ion-label>
+    <ion-select [(ngModel)]="gaming">
+      <ion-option value="nes">Candidato 1</ion-option>
+      <ion-option value="n64">Candidato 2</ion-option>
+      <ion-option value="ps">Candidato 3</ion-option>
+      <ion-option value="genesis">Candidato 4</ion-option>
+      <ion-option value="saturn">Candidato 5</ion-option>
+      <ion-option value="snes">Candidato 6</ion-option>
+    </ion-select>
+
+     <button ion-button (click)="takePicture()">Enviar</button>
+    </ion-card>
+</ion-content>
