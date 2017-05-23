@@ -23,17 +23,14 @@
     <ion-item>
         <ion-label>Candidato</ion-label>
     </ion-item>
-    <ion-item>  
-        <ion-select ng-model="opcionescandidatos" ng-options="item for item in opcionescandidatos" >
-      </ion-select>
-    </ion-item> 
+    <ion-item>
+      <select [(ngModel)]="candidatoelegido">
+            <option  ion-item *ngFor="let item of candidatos" value={{item.candidato}}>{{item.candidato}}</option>
+          </select>
+    </ion-item>
+
 
     <ion-item>
-        <button ion-button (click)="enviar()">Enviar</button> 
+        <button ion-button (click)="enviar()">Enviar</button>
     </ion-item>
 </ion-content>
-
-
-
-
-
