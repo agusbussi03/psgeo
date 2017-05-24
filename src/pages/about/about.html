@@ -1,11 +1,25 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Que es esto
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>
+            Enviados
+        </ion-title>
+    </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<p>Esta aplicacion permite ...
+    <ion-list>  
+        <ion-item>
+            <button ion-button (click)="mostrar()">Actualizar</button>
+        </ion-item>
+        <ion-item  *ngFor="let item of enviados" >
+            <div style='float: left;'>
+                <p>{{item.fecha}} - {{item.candidato}}</p><p>{{item.lat}},{{item.lon}}</p>
+                <ion-icon [hidden]="item.enviado == '1'"  md="md-checkmark-circle"></ion-icon>
+                <ion-icon [hidden]="item.enviado == '0'" md="md-close-circle"></ion-icon>
+            </div>
+            <div style='float:right'>
+                <img [src]="item.foto" height='100px' />
+            </div>
+        </ion-item>
+    </ion-list>
 </ion-content>
